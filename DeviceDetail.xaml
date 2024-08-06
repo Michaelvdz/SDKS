@@ -1,0 +1,203 @@
+﻿<Window x:Class="Service_Program.DeviceDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Service_Program"
+        mc:Ignorable="d"
+        Title="Toestel Details" Height="450" Width="800" WindowState="Maximized">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <!--    Row 2   -->
+        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Vertical">
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">ID:</TextBlock>
+                <TextBlock Text="{Binding DeviceId}"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Type toestel:</TextBlock>
+                <TextBlock Text="{Binding DeviceName}"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Serie nummer:</TextBlock>
+                <TextBlock Text="{Binding SerialNumber}"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Referentie:</TextBlock>
+                <TextBlock Text="{Binding Reference}"></TextBlock>
+            </StackPanel>
+            <StackPanel x:Name="stuk"  Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Defect:</TextBlock>
+                <TextBlock> Dit toestel is defect</TextBlock>
+            </StackPanel>
+            <StackPanel x:Name="lost"  Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Lost:</TextBlock>
+                <TextBlock> Deze klant is Lost</TextBlock>
+            </StackPanel>
+            <StackPanel x:Name="geenOp"  Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Oproep:</TextBlock>
+                <TextBlock>Geen oproep nodig</TextBlock>
+            </StackPanel>
+                <StackPanel x:Name="gekocht" Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Aangekocht:</TextBlock>
+                <TextBlock Text="{Binding Bought, StringFormat=\{0:dd/MM/yyyy\}}"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Laatste kalibratie:</TextBlock>
+                <TextBlock Text="{Binding LastCheck, StringFormat=\{0:dd/MM/yyyy\}}"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Volgende kalibratie:</TextBlock>
+                <TextBlock Text="{Binding NextCheck, StringFormat=\{0:dd/MM/yyyy\}}"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Prijs:</TextBlock>
+                <TextBlock Text="{Binding Price}"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Note:</TextBlock>
+                <TextBlock Text="{Binding Note}"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Info toestel:(niet zichtbaar):</TextBlock>
+                <TextBlock Text="{Binding Opmerking}"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <TextBlock Margin="0 0 20 0">Sensors:</TextBlock>
+                <TextBlock Text="{Binding Sensor1}"></TextBlock>
+                <TextBlock Text="  "></TextBlock>
+                <TextBlock Text="{Binding Sensor2}"></TextBlock>
+                <TextBlock Text="  "></TextBlock>
+                <TextBlock Text="{Binding Sensor3}"></TextBlock>
+                <TextBlock Text="  "></TextBlock>
+                <TextBlock Text="{Binding Sensor4}"></TextBlock>
+                <TextBlock Text="  "></TextBlock>
+                <TextBlock Text="{Binding Sensor5}"></TextBlock>
+                <TextBlock Text="  "></TextBlock>
+                <TextBlock Text="{Binding Sensor6}"></TextBlock>
+                <TextBlock Text="  "></TextBlock>
+                <TextBlock Text="{Binding Sensor7}"></TextBlock>
+                <TextBlock Text="  "></TextBlock>
+                <TextBlock Text="{Binding Sensor8}"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Visibility="Collapsed" x:Name="AlarmTitle" Margin="0 0 20 0">Alarmen:</TextBlock>
+                <StackPanel x:Name="Alarm1Group" Visibility="Collapsed" Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0" MinWidth="75"  Text="{Binding Alarm1Name}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Laag:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm1L}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Hoog:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm1H}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="STEL:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm1S}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="TWA:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm1T}"></TextBlock>
+                </StackPanel>
+                <StackPanel x:Name="Alarm2Group" Visibility="Collapsed" Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0" MinWidth="75" Text="{Binding Alarm2Name}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Laag:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm2L}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Hoog:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm2H}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="STEL:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm2S}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="TWA:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm2T}"></TextBlock>
+                </StackPanel>
+                <StackPanel x:Name="Alarm3Group" Visibility="Collapsed" Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0" MinWidth="75" Text="{Binding Alarm3Name}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Laag:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm3L}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Hoog:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm3H}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="STEL:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm3S}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="TWA:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm3T}"></TextBlock>
+                </StackPanel>
+                <StackPanel x:Name="Alarm4Group" Visibility="Collapsed" Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0" MinWidth="75" Text="{Binding Alarm4Name}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Laag:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm4L}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Hoog:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm4H}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="STEL:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm4S}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="TWA:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm4T}"></TextBlock>
+                </StackPanel>
+                <StackPanel x:Name="Alarm5Group" Visibility="Collapsed" Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0" MinWidth="75" Text="{Binding Alarm5Name}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Laag:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm5L}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Hoog:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm5H}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="STEL:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm5S}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="TWA:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm5T}"></TextBlock>
+                </StackPanel>
+                <StackPanel x:Name="Alarm6Group" Visibility="Collapsed" Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0" MinWidth="75" Text="{Binding Alarm6Name}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Laag:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm6L}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Hoog:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm6H}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="STEL:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm6S}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="TWA:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm6T}"></TextBlock>
+                </StackPanel>
+                <StackPanel x:Name="Alarm7Group" Visibility="Collapsed" Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0" MinWidth="75" Text="{Binding Alarm7Name}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Laag:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm7L}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Hoog:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm7H}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="STEL:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm7S}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="TWA:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm7T}"></TextBlock>
+                </StackPanel>
+                <StackPanel x:Name="Alarm8Group" Visibility="Collapsed" Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0" MinWidth="75" Text="{Binding Alarm8Name}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Laag:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm8L}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="Hoog:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm8H}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="STEL:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm8S}"></TextBlock>
+                    <TextBlock Margin="0 0 5 0" Text="TWA:"></TextBlock>
+                    <TextBlock MinWidth="50" Text="{Binding Alarm8T}"></TextBlock>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <!--    Row 3   -->
+        <TextBlock  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top">Kalibraties:</TextBlock>
+        <DataGrid x:Name="ChecksGrid" LoadingRow="ChecksGrid_LoadingRow" Margin="0 20 0 0" Grid.Column="1" Grid.Row="2" IsReadOnly="True" HeadersVisibility="All" AutoGenerateColumns="True" ColumnWidth="*" HorizontalAlignment="Left" VerticalAlignment="Stretch" SelectionChanged="ChecksGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Datum" Binding="{Binding Date, StringFormat=\{0:dd/MM/yyyy\}}" SortDirection="Ascending"/>
+                <DataGridTextColumn Header="Details" Binding="{Binding Details}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--    Row 4   -->
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Grid.Column="1" Grid.Row="3" Width="150" Click="Button_Certificate" Height="22" VerticalAlignment="Top" Margin="0 20 20 0">Certificaat opvragen</Button>
+            <Button Grid.Column="1" Grid.Row="3" Width="150" Click="Button_EditKali" Height="22" VerticalAlignment="Top" Margin="0 20 20 0">Bewerk Kalibratie</Button>
+            <Button Grid.Column="1" Grid.Row="3" Width="150" Click="Button_DeleteCert" Height="22" VerticalAlignment="Top" Margin="0 20 0 0">Verwijder Kalibratie</Button>
+        </StackPanel>
+    </Grid>
+    </ScrollViewer>
+</Window>

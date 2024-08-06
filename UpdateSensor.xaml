@@ -1,0 +1,58 @@
+﻿<Window x:Class="Service_Program.UpdateSensor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Service_Program"
+        mc:Ignorable="d"
+        Title="Bewerk Sensor" Height="450" Width="800" WindowState="Maximized">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">Naam:</TextBlock>
+                    <TextBox MinWidth="150" Text="{Binding SensorName}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">Bereik:</TextBlock>
+                    <TextBox MinWidth="150" Text="{Binding Range}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">Resolutie:</TextBlock>
+                    <TextBox MinWidth="150" Text="{Binding Resolution}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">Laag:</TextBlock>
+                    <TextBox MinWidth="150" Text="{Binding Laag}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">Hoog:</TextBlock>
+                    <TextBox MinWidth="150" Text="{Binding Hoog}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">STEL:</TextBlock>
+                    <TextBox MinWidth="150" Text="{Binding Stel}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">TWA:</TextBlock>
+                    <TextBox MinWidth="150" Text="{Binding Twa}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">Concentratie kalibratiegas:</TextBlock>
+                    <TextBox MinWidth="150" Text="{Binding Conc}"></TextBox>
+                </StackPanel>
+                <Button Width="150" Click="Button_Click">Opslaan</Button>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

@@ -1,0 +1,655 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C818D10-1B9C-46C4-8B3E-DDD7648F12C5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Service_Program</RootNamespace>
+    <AssemblyName>Service Program</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sd.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A7CB2F9F7B6F16E85045A11498569C00ABCBBB73</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Service Program_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Outlook, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Outlook.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Outlook.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-WPF.1.32.2608.0\lib\net20\MigraDoc.DocumentObjectModel-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-WPF.1.32.2608.0\lib\net20\MigraDoc.Rendering-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-WPF.1.32.2608.0\lib\net20\MigraDoc.RtfRendering-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.10.7\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.10.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.10.7\lib\net452\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-WPF, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-WPF.1.32.2608.0\lib\net20\PdfSharp-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting-WPF, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-WPF.1.32.2608.0\lib\net20\PdfSharp.Charting-WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddSensors.xaml.cs">
+      <DependentUpon>AddSensors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Certificate.cs" />
+    <Compile Include="DatePickerCalendar.cs" />
+    <Compile Include="ExcelCreatorKalibratieKlanten.cs" />
+    <Compile Include="ExcelCreatorKalibratie.cs" />
+    <Compile Include="ExcelCreator.cs" />
+    <Compile Include="DeletedDevices.xaml.cs">
+      <DependentUpon>DeletedDevices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901151329373_PresetDevs.cs" />
+    <Compile Include="Migrations\201901151329373_PresetDevs.Designer.cs">
+      <DependentUpon>201901151329373_PresetDevs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901291246287_AddedSensorsToDefaultDevs.cs" />
+    <Compile Include="Migrations\201901291246287_AddedSensorsToDefaultDevs.Designer.cs">
+      <DependentUpon>201901291246287_AddedSensorsToDefaultDevs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901291336305_AddedAlarmenToSensors.cs" />
+    <Compile Include="Migrations\201901291336305_AddedAlarmenToSensors.Designer.cs">
+      <DependentUpon>201901291336305_AddedAlarmenToSensors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901291731567_DeletableDevs.cs" />
+    <Compile Include="Migrations\201901291731567_DeletableDevs.Designer.cs">
+      <DependentUpon>201901291731567_DeletableDevs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901301207044_PresentOrNot.cs" />
+    <Compile Include="Migrations\201901301207044_PresentOrNot.Designer.cs">
+      <DependentUpon>201901301207044_PresentOrNot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902081235225_ConcSensors.cs" />
+    <Compile Include="Migrations\201902081235225_ConcSensors.Designer.cs">
+      <DependentUpon>201902081235225_ConcSensors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001071614077_HideSensors.cs" />
+    <Compile Include="Migrations\202001071614077_HideSensors.Designer.cs">
+      <DependentUpon>202001071614077_HideSensors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001080808441_HidealarmsCertificate.cs" />
+    <Compile Include="Migrations\202001080808441_HidealarmsCertificate.Designer.cs">
+      <DependentUpon>202001080808441_HidealarmsCertificate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103011826389_CheckOptionsAdded.cs" />
+    <Compile Include="Migrations\202103011826389_CheckOptionsAdded.Designer.cs">
+      <DependentUpon>202103011826389_CheckOptionsAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103011841106_AddedMoreOptionsToCheck.cs" />
+    <Compile Include="Migrations\202103011841106_AddedMoreOptionsToCheck.Designer.cs">
+      <DependentUpon>202103011841106_AddedMoreOptionsToCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103101053443_AddedO2Sensor.cs" />
+    <Compile Include="Migrations\202103101053443_AddedO2Sensor.Designer.cs">
+      <DependentUpon>202103101053443_AddedO2Sensor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207122010576_CheckListForCertificatesUpdated.cs" />
+    <Compile Include="Migrations\202207122010576_CheckListForCertificatesUpdated.Designer.cs">
+      <DependentUpon>202207122010576_CheckListForCertificatesUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207131313261_ClientAddedDate.cs" />
+    <Compile Include="Migrations\202207131313261_ClientAddedDate.Designer.cs">
+      <DependentUpon>202207131313261_ClientAddedDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207261350093_KalibratiemaandNaarInt.cs" />
+    <Compile Include="Migrations\202207261350093_KalibratiemaandNaarInt.Designer.cs">
+      <DependentUpon>202207261350093_KalibratiemaandNaarInt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202207281214434_AddBatteryToCheckUp.cs" />
+    <Compile Include="Migrations\202207281214434_AddBatteryToCheckUp.Designer.cs">
+      <DependentUpon>202207281214434_AddBatteryToCheckUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202208021505119_EditKalimaand.cs" />
+    <Compile Include="Migrations\202208021505119_EditKalimaand.Designer.cs">
+      <DependentUpon>202208021505119_EditKalimaand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202306131612526_AddedNoServiceCustomers.cs" />
+    <Compile Include="Migrations\202306131612526_AddedNoServiceCustomers.Designer.cs">
+      <DependentUpon>202306131612526_AddedNoServiceCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresetDevs.cs" />
+    <Compile Include="DefaultDevices.xaml.cs">
+      <DependentUpon>DefaultDevices.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditCheck.xaml.cs">
+      <DependentUpon>EditCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808061310530_ChangeSensorModel.cs" />
+    <Compile Include="Migrations\201808061310530_ChangeSensorModel.Designer.cs">
+      <DependentUpon>201808061310530_ChangeSensorModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808061935000_SensorsInCheckup.cs" />
+    <Compile Include="Migrations\201808061935000_SensorsInCheckup.Designer.cs">
+      <DependentUpon>201808061935000_SensorsInCheckup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808062040190_AddConcentration.cs" />
+    <Compile Include="Migrations\201808062040190_AddConcentration.Designer.cs">
+      <DependentUpon>201808062040190_AddConcentration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808062046076_AddedProps.cs" />
+    <Compile Include="Migrations\201808062046076_AddedProps.Designer.cs">
+      <DependentUpon>201808062046076_AddedProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808201847398_AddedPrice.cs" />
+    <Compile Include="Migrations\201808201847398_AddedPrice.Designer.cs">
+      <DependentUpon>201808201847398_AddedPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808251346176_EditKaliAddOpmerking.cs" />
+    <Compile Include="Migrations\201808251346176_EditKaliAddOpmerking.Designer.cs">
+      <DependentUpon>201808251346176_EditKaliAddOpmerking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201808270929073_AddedSettings.cs" />
+    <Compile Include="Migrations\201808270929073_AddedSettings.Designer.cs">
+      <DependentUpon>201808270929073_AddedSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810040927547_AddedBrokenField.cs" />
+    <Compile Include="Migrations\201810040927547_AddedBrokenField.Designer.cs">
+      <DependentUpon>201810040927547_AddedBrokenField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810041100511_AddedReferenceToDevice.cs" />
+    <Compile Include="Migrations\201810041100511_AddedReferenceToDevice.Designer.cs">
+      <DependentUpon>201810041100511_AddedReferenceToDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810081752174_AddedAlarms.cs" />
+    <Compile Include="Migrations\201810081752174_AddedAlarms.Designer.cs">
+      <DependentUpon>201810081752174_AddedAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810081902404_EditAlarms.cs" />
+    <Compile Include="Migrations\201810081902404_EditAlarms.Designer.cs">
+      <DependentUpon>201810081902404_EditAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810090849374_EditAlarmsCheckUp.cs" />
+    <Compile Include="Migrations\201810090849374_EditAlarmsCheckUp.Designer.cs">
+      <DependentUpon>201810090849374_EditAlarmsCheckUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810111128069_AddedLost.cs" />
+    <Compile Include="Migrations\201810111128069_AddedLost.Designer.cs">
+      <DependentUpon>201810111128069_AddedLost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291117586_EditNextCheck.cs" />
+    <Compile Include="Migrations\201811291117586_EditNextCheck.Designer.cs">
+      <DependentUpon>201811291117586_EditNextCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291223189_HideAlarms.cs" />
+    <Compile Include="Migrations\201811291223189_HideAlarms.Designer.cs">
+      <DependentUpon>201811291223189_HideAlarms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291346521_HideConcentration.cs" />
+    <Compile Include="Migrations\201811291346521_HideConcentration.Designer.cs">
+      <DependentUpon>201811291346521_HideConcentration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812101616261_AddedNoService.cs" />
+    <Compile Include="Migrations\201812101616261_AddedNoService.Designer.cs">
+      <DependentUpon>201812101616261_AddedNoService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewDefaultDevice.xaml.cs">
+      <DependentUpon>NewDefaultDevice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewSensor.xaml.cs">
+      <DependentUpon>NewSensor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MailCertificaten.xaml.cs">
+      <DependentUpon>MailCertificaten.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sensor.cs" />
+    <Compile Include="DeviceDetail.xaml.cs">
+      <DependentUpon>DeviceDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201806131615365_InitialCreate.cs" />
+    <Compile Include="Migrations\201806131615365_InitialCreate.Designer.cs">
+      <DependentUpon>201806131615365_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807131508486_VirtualFK.cs" />
+    <Compile Include="Migrations\201807131508486_VirtualFK.Designer.cs">
+      <DependentUpon>201807131508486_VirtualFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="NewCheck.xaml.cs">
+      <DependentUpon>NewCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewClient.xaml.cs">
+      <DependentUpon>NewClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sensoren.xaml.cs">
+      <DependentUpon>Sensoren.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Setting.cs" />
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeKalibrerenKlanten.xaml.cs">
+      <DependentUpon>TeKalibrerenKlanten.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TeKalibreren.xaml.cs">
+      <DependentUpon>TeKalibreren.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateClient.xaml.cs">
+      <DependentUpon>UpdateClient.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDefaultDevice.xaml.cs">
+      <DependentUpon>UpdateDefaultDevice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDevice.xaml.cs">
+      <DependentUpon>UpdateDevice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSensor.xaml.cs">
+      <DependentUpon>UpdateSensor.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddSensors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DefaultDevices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeletedDevices.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DeviceDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditCheck.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CheckUp.cs" />
+    <Compile Include="NewDevice.xaml.cs">
+      <DependentUpon>NewDevice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceProgramContext.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="NewCheck.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewDefaultDevice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NewDevice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NewSensor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MailCertificaten.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Sensoren.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TeKalibrerenKlanten.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TeKalibreren.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateDefaultDevice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UpdateDevice.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateSensor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Migrations\201806131615365_InitialCreate.resx">
+      <DependentUpon>201806131615365_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807131508486_VirtualFK.resx">
+      <DependentUpon>201807131508486_VirtualFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808061310530_ChangeSensorModel.resx">
+      <DependentUpon>201808061310530_ChangeSensorModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808061935000_SensorsInCheckup.resx">
+      <DependentUpon>201808061935000_SensorsInCheckup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808062040190_AddConcentration.resx">
+      <DependentUpon>201808062040190_AddConcentration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808062046076_AddedProps.resx">
+      <DependentUpon>201808062046076_AddedProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808201847398_AddedPrice.resx">
+      <DependentUpon>201808201847398_AddedPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808251346176_EditKaliAddOpmerking.resx">
+      <DependentUpon>201808251346176_EditKaliAddOpmerking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201808270929073_AddedSettings.resx">
+      <DependentUpon>201808270929073_AddedSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810040927547_AddedBrokenField.resx">
+      <DependentUpon>201810040927547_AddedBrokenField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810041100511_AddedReferenceToDevice.resx">
+      <DependentUpon>201810041100511_AddedReferenceToDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810081752174_AddedAlarms.resx">
+      <DependentUpon>201810081752174_AddedAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810081902404_EditAlarms.resx">
+      <DependentUpon>201810081902404_EditAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810090849374_EditAlarmsCheckUp.resx">
+      <DependentUpon>201810090849374_EditAlarmsCheckUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810111128069_AddedLost.resx">
+      <DependentUpon>201810111128069_AddedLost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291117586_EditNextCheck.resx">
+      <DependentUpon>201811291117586_EditNextCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291223189_HideAlarms.resx">
+      <DependentUpon>201811291223189_HideAlarms.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291346521_HideConcentration.resx">
+      <DependentUpon>201811291346521_HideConcentration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812101616261_AddedNoService.resx">
+      <DependentUpon>201812101616261_AddedNoService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901151329373_PresetDevs.resx">
+      <DependentUpon>201901151329373_PresetDevs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901291246287_AddedSensorsToDefaultDevs.resx">
+      <DependentUpon>201901291246287_AddedSensorsToDefaultDevs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901291336305_AddedAlarmenToSensors.resx">
+      <DependentUpon>201901291336305_AddedAlarmenToSensors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901291731567_DeletableDevs.resx">
+      <DependentUpon>201901291731567_DeletableDevs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901301207044_PresentOrNot.resx">
+      <DependentUpon>201901301207044_PresentOrNot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902081235225_ConcSensors.resx">
+      <DependentUpon>201902081235225_ConcSensors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001071614077_HideSensors.resx">
+      <DependentUpon>202001071614077_HideSensors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001080808441_HidealarmsCertificate.resx">
+      <DependentUpon>202001080808441_HidealarmsCertificate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103011826389_CheckOptionsAdded.resx">
+      <DependentUpon>202103011826389_CheckOptionsAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103011841106_AddedMoreOptionsToCheck.resx">
+      <DependentUpon>202103011841106_AddedMoreOptionsToCheck.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103101053443_AddedO2Sensor.resx">
+      <DependentUpon>202103101053443_AddedO2Sensor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207122010576_CheckListForCertificatesUpdated.resx">
+      <DependentUpon>202207122010576_CheckListForCertificatesUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207131313261_ClientAddedDate.resx">
+      <DependentUpon>202207131313261_ClientAddedDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207261350093_KalibratiemaandNaarInt.resx">
+      <DependentUpon>202207261350093_KalibratiemaandNaarInt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202207281214434_AddBatteryToCheckUp.resx">
+      <DependentUpon>202207281214434_AddBatteryToCheckUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208021505119_EditKalimaand.resx">
+      <DependentUpon>202208021505119_EditKalimaand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202306131612526_AddedNoServiceCustomers.resx">
+      <DependentUpon>202306131612526_AddedNoServiceCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app2.manifest" />
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="sd.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sig.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\template-kalibratie.xlsx" />
+    <None Include="Resources\template-kalibratieklanten.xlsx" />
+    <None Include="Resources\template.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Service Program_TemporaryKey.pfx" />
+    <None Include="sig.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

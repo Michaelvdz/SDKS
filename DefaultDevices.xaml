@@ -1,0 +1,35 @@
+﻿<Window x:Class="Service_Program.DefaultDevices"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Service_Program"
+        mc:Ignorable="d"
+        Title="DefaultDevices" Height="450" Width="800" WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <!--    Row 4   -->
+        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">Toestellen</TextBlock>
+        <DataGrid x:Name="DefaultDeviceGrid" LoadingRow="DefaultDeviceGrid_LoadingRow" Margin="0 20 0 0" Grid.Column="1" Grid.Row="2" IsReadOnly="True" AutoGenerateColumns="True" ColumnWidth="*" HorizontalAlignment="Left" VerticalAlignment="Stretch" SelectionChanged="DefaultDeviceGrid_SelectionChanged" HeadersVisibility="All">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Naam" Binding="{Binding Name}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="0 25 0 25">
+            <Button MaxWidth="150" Click="Button_ClickNewDefaultDevice" Grid.ColumnSpan="2" Margin="0 0 0 0">Nieuw Toestel</Button>
+            <Button MaxWidth="150" Click="Button_ClickUpdateDefaultDevice" Grid.ColumnSpan="2" Margin="50 0 0 0">Wijzig Toestel</Button>
+            <Button MaxWidth="150" Click="Button_ClickDeleteDefaultDevice" Grid.ColumnSpan="2" Margin="50 0 0 0">Delete Toestel</Button>
+        </StackPanel>
+    </Grid>
+</Window>

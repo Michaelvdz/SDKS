@@ -1,0 +1,48 @@
+﻿<Window x:Class="Service_Program.NewDefaultDevice"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:Service_Program"
+        mc:Ignorable="d"
+        Title="Nieuw Default Toestel" Height="450" Width="800" WindowState="Maximized">
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="1" Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">Type Toestel:</TextBlock>
+                    <TextBox MinWidth="150" Text="{Binding DeviceName}"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">Sensoren:</TextBlock>
+                    <DataGrid x:Name="SensorGrid" Height="100" Width="500" IsReadOnly="True" AutoGenerateColumns="True" ColumnWidth="*" HorizontalAlignment="Left" VerticalAlignment="Stretch" SelectionChanged="SensorGrid_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="Bereik" Binding="{Binding Range}"/>
+                            <DataGridTextColumn Header="Resolutie" Binding="{Binding Resolution}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <Button Width="150" Click="Button_ClickAddSensors">Sensors toevoegen</Button>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Margin="0 0 20 0">Notitie:</TextBlock>
+                    <TextBox MinWidth="150" MinHeight="150" Text="{Binding Note}" AcceptsTab="True" AcceptsReturn="true"></TextBox>
+                    <TextBlock Margin="100 0 20 0">Info Toestel(Niet zichtbaar):</TextBlock>
+                    <TextBox MinWidth="150" MinHeight="150" Text="{Binding Opmerking}" AcceptsTab="True" AcceptsReturn="true"></TextBox>
+                </StackPanel>
+                <Button Width="150" Click="Button_Click">Opslaan</Button>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
